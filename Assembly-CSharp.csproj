@@ -56,10 +56,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Player\Hearth.cs" />
-     <Compile Include="Assets\Script\Player\Fire.cs" />
+     <Compile Include="Assets\Script\Player\Player.cs" />
+     <Compile Include="Assets\Script\Player\Bullet.cs" />
      <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Script\Fade\FadeSprite.cs" />
-     <Compile Include="Assets\Script\Player\PhunLua.cs" />
+     <Compile Include="Assets\Script\Player\Gun.cs" />
+     <Compile Include="Assets\Script\Main\Main.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>F:/unity/GameGitHub/Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

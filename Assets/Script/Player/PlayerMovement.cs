@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed = 1f;
-    public Transform Sung;
+    public Transform Gun;
     public Rigidbody2D rb;
 
     public Animator animator;
@@ -37,6 +37,6 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(move);
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        Sung.rotation = Quaternion.Euler(lookDir.x,lookDir.y,angle);
+        Gun.rotation = Quaternion.Euler(lookDir.x,lookDir.y,angle);
     }
 }
