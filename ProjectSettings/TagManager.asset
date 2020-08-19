@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - dan
+  - wall
+  - tree
+  - Bullet
+  - BulletAI
+  - Gun
+  - itemMau
   layers:
   - Default
   - TransparentFX

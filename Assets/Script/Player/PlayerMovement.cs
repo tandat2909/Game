@@ -6,11 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed = 1f;
-
+    public Transform Gun;
     public Rigidbody2D rb;
 
     public Animator animator;
+    public Camera cam;
 
+    Vector2 mousePos;
     Vector2 movement;
 
 
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -27,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        Vector2 move = rb.position + movement * moveSpeed * Time.fixedDeltaTime;
+
+        //Debug.Log(transform.position.x + " y " + transform.position.y);
+
+        rb.MovePosition(move);
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        Gun.rotation = Quaternion.Euler(lookDir.x,lookDir.y,angle);
     }
 }
