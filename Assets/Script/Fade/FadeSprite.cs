@@ -35,10 +35,28 @@ public class FadeSprite : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        StartCoroutine("FadeOut");       
+        if (collider.gameObject.tag == "Player")
+        {
+            StartCoroutine("FadeOut");
+        }
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-        StartCoroutine("FadeIn");
+        if (collider.gameObject.tag == "Player")
+            StartCoroutine("FadeIn");
+    }
+    void OnCollisionEnter2D(Collision2D target)
+    {
+        if(target.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("FadeOut");
+        }
+    }
+    void OnCollisionExit2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("FadeIn");
+        }
     }
 }
