@@ -114,7 +114,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215750756662345099}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1100fa59a2ba37f4c8a89ba98360db25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  enemyName: 
-  active: 0
-  baseAttack: 0
-  moveSpeed: 0
-  chaseRadius: 0
-  attackRadius: 0
+  health: 100
+  enemyName: Enemy Mole
+  State: 0
+  baseAttack: 1
+  moveSpeedE: 0.5
+  chaseRadius: 3.6
+  attackRadius: 0.2
   homePosition: {fileID: 0}

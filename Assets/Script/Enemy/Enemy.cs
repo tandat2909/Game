@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public string enemyName;
     public bool State = false;
     public float baseAttack;
-    public float moveSpeed;
+    public float moveSpeedE;
     // Start is called before the first frame update
     void Start()
     {

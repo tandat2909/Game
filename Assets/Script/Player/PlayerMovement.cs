@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed = 7f;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Animator animator;
     private Vector2 change;
+    public Camera cam;
+    public Vector2 mouespos;
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -21,21 +23,35 @@ public class PlayerMovement : MonoBehaviour
         change = Vector2.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine (AttackAnimation());
+        if (Input.GetMouseButtonDown(0))
+        {            
+            StartCoroutine(AttackAnimation());
+            Debug.Log("animation");
         }
         else
+        {
             UpdateAnimationAndMove();
+        }
+
+        mouespos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private IEnumerator AttackAnimation()
     {
+        MousePos();
         animator.SetBool("attacking", true);
+        if (change != Vector2.zero)
+        {
+            animator.SetFloat("HorizontalMouse", change.x);
+            animator.SetFloat("VerticalMouse", change.y);
+        } 
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.3f);
-
+        yield return new WaitForSeconds(.3f);       
+    }
+    void MousePos()
+    {
+        change = mouespos - rb.position;
     }
 
     void UpdateAnimationAndMove() {
@@ -56,8 +72,5 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + change * moveSpeed * Time.deltaTime);
     }
-    void FixedUpdate()
-    {
-        
-    }
+    
 }
