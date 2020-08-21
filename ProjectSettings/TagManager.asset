@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - dan
   - wall
   - tree
@@ -11,6 +12,10 @@ TagManager:
   - BulletAI
   - Gun
   - itemMau
+=======
+  - Enemy
+  - wall
+>>>>>>> Edit-map-1
   layers:
   - Default
   - TransparentFX

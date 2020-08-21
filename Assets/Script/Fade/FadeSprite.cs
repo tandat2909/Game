@@ -35,6 +35,7 @@ public class FadeSprite : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+<<<<<<< HEAD
         if(collider.tag =="Player")
          StartCoroutine("FadeOut");       
     }
@@ -42,5 +43,30 @@ public class FadeSprite : MonoBehaviour
     {
         if (collider.tag == "Player")
             StartCoroutine("FadeIn");
+=======
+        if (collider.gameObject.tag == "Player")
+        {
+            StartCoroutine("FadeOut");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+            StartCoroutine("FadeIn");
+    }
+    void OnCollisionEnter2D(Collision2D target)
+    {
+        if(target.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("FadeOut");
+        }
+    }
+    void OnCollisionExit2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("FadeIn");
+        }
+>>>>>>> Edit-map-1
     }
 }

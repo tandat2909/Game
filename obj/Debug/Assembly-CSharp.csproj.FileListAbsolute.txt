@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 F:\unity\GameGitHub\Game\Temp\bin\Debug\Assembly-CSharp.dll
 F:\unity\GameGitHub\Game\Temp\bin\Debug\Assembly-CSharp.pdb
 F:\unity\GameGitHub\Game\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
@@ -310,3 +311,7 @@ F:\unity\GameGitHub\Game\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cach
 F:\unity\GameGitHub\Game\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 F:\unity\GameGitHub\Game\obj\Debug\Assembly-CSharp.dll
 F:\unity\GameGitHub\Game\obj\Debug\Assembly-CSharp.pdb
+=======
+F:\unity\GameGitHub\edit-map\Game\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+F:\unity\GameGitHub\edit-map\Game\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+>>>>>>> Edit-map-1
