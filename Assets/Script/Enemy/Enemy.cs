@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public float health;
     public string enemyName;
-    public bool State = false;
-    public float baseAttack;
+    //public bool State = false;
+    public float Damage;
+  
     public float moveSpeedE;
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,20 @@ public class Enemy : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D target)
+    void OnTriggerEnter2D(Collider2D tag)
     {
-        if (target.gameObject.tag == "Enemy")
+        if (tag.gameObject.tag == "Arrow")
         {
-            State = false;
+            Arrow hit = tag.gameObject.GetComponent<Arrow>();
+            if(health - hit.Damage <= 0)
+            {
+                Destroy(this.gameObject);
+
+            }else
+                health -= hit.Damage;
+
+            Destroy(tag.gameObject);
         }
     }
+
 }

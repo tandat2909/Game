@@ -24,28 +24,16 @@ public class EnemyMole : Enemy
     }
     void CheckDistance()
     {
-        
-            if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
-            {
-             
-                transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeedE * Time.deltaTime);
-            }
-    }
-    void OnTriggerEnter2D(Collider2D tag)
-    {
-        if(tag.gameObject.tag == "Player")
+
+        if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            State= true;
+
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeedE * Time.deltaTime);
         }
     }
+
    
-    void OnTriggerExit2D(Collider2D tag)
-    {
-        if(tag.gameObject.tag == "Player")
-        {
-            State = false;
-        }
-    }
+
 
 
 

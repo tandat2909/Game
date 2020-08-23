@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - wall
   - Arrow
+  - bienCam
+  - itemMau
   layers:
   - Default
   - TransparentFX
