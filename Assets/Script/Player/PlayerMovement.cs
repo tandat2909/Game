@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed;
     public Rigidbody2D rb;
     public Animator animator;
-    private Vector3 change;
-    
+    private Vector2 change;
     public Camera cam;
     public Vector2 mouespos;
 
@@ -24,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        change = Vector3.zero;
+        change = Vector2.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 
@@ -33,31 +32,31 @@ public class PlayerMovement : MonoBehaviour
         mouespos = cam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            
+
             StartCoroutine(AttackAnimation());
-            
-        }
-        else
-        {
-            
-            UpdateAnimationAndMove();
+
         }
 
+    }
+
+    void FixedUpdate()
+    {
         
+        UpdateAnimationAndMove();
     }
 
     private IEnumerator AttackAnimation()
     {
         MousePos();
         animator.SetBool("attacking", true);
-        if (change != Vector3.zero)
+        if (change != Vector2.zero)
         {
             animator.SetFloat("HorizontalMouse", change.x);
             animator.SetFloat("VerticalMouse", change.y);
         } 
         yield return null;
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.1f);       
+        yield return null;
     }
     void MousePos()
     {
@@ -65,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void UpdateAnimationAndMove() {
-        if (change != Vector3.zero)
+        if (change != Vector2.zero)
         {
             MovePlayer();
             animator.SetFloat("Horizontal", change.x);
@@ -80,8 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-       // rb.MovePosition(rb.position + change * moveSpeed * Time.deltaTime);
-        this.transform.position += change * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + change * moveSpeed * Time.deltaTime);
+       // this.transform.position += change * moveSpeed * Time.deltaTime;
     }
    
 }
