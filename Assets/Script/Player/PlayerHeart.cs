@@ -17,6 +17,18 @@ public class PlayerHeart : MonoBehaviour
         sliderBlood.value = Blood;
         
     }
+    void FixedUpdate()
+    {
+        
+        if (Blood <= 0)
+        {
+            sliderBlood.value = 0;
+            Player die = GetComponent<Player>();
+            die.status = false;
+           
+        }else
+        sliderBlood.value = Blood;
+    }
     
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -34,34 +46,7 @@ public class PlayerHeart : MonoBehaviour
         sliderBlood.value = Blood;
 
     }
-   void  OnCollisionEnter2D(Collision2D target)
-    {
-        Onshoot(target.gameObject);
-       
-        
-    }
 
-
-
-    void Onshoot(GameObject target)
-    {
-        if (target.tag == "Enemy")
-        {
-            Enemy enm = target.gameObject.GetComponent<Enemy>();
-
-            if (enm != null)
-            {
-                float DamageEnemy = enm.Damage;
-                if (Blood - DamageEnemy <= 0)
-                {
-                    Blood = 0;
-                }
-                else
-                    Blood -= DamageEnemy;
-            }
-            sliderBlood.value = Blood;
-        }
-    }
     public void _NoClickChanged()
     {
         sliderBlood.value = Blood;

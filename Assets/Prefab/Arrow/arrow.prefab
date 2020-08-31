@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7431093144465214835}
   - component: {fileID: 6176242001943296300}
   - component: {fileID: 2209299944652044004}
+  - component: {fileID: 2944977201666075263}
   m_Layer: 0
   m_Name: arrow
   m_TagString: Arrow
@@ -144,4 +145,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b12cc10f82e0f4691beaaadbda7438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 100
+  Damage: 20
+--- !u!114 &2944977201666075263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843483840101201238}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ec77396af188f40a5d9bfc137ad211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thurst: 0.98
+  knockTime: 0.12

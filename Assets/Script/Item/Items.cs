@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Items 
+public class Items
 {
     public float IDItem;
     public string NameItem;

@@ -22,16 +22,17 @@ public class KnockBack : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemys")
+        if (other.gameObject.tag == "Enemy")
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if (enemy != null)
             {
-                enemy.isKinematic = false;
-                Vector2 difference = enemy.transform.position - transform.position;
-                difference = difference.normalized * thurst;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
+                
+                Vector2 difference = enemy.transform.position ;
+                difference = difference.normalized * thurst ;
+                enemy.velocity = new Vector2(-1f, -1f)*thurst;
                 StartCoroutine(KnockCo(enemy));
+                
             }
         }
     }
@@ -41,7 +42,7 @@ public class KnockBack : MonoBehaviour
         {
             yield return new WaitForSeconds(knockTime);
             enemy.velocity = Vector2.zero;
-            enemy.isKinematic = true;
+            
         }
     }
 }

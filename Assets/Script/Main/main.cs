@@ -26,14 +26,14 @@ public class main : MonoBehaviour
     }
     IEnumerator CreatEnemy()
     {
-       
-        
-            yield return new WaitForSeconds(TimeCreatEnemy);
-            
+        if (isCreatEnemy)
+        {
             GameObject a = Instantiate(enemy);
-            
             a.transform.position = new Vector3(Random.Range(-5.8f, 6.4f), Random.Range(-2.8f, 3.4f), enemy.transform.position.z);
-            StartCoroutine(CreatEnemy());
-        
+            yield return new WaitForSeconds(TimeCreatEnemy);
+
+        }
+        yield return null;
+        StartCoroutine(CreatEnemy());
     }
 }
