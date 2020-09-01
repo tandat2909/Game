@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7141196150280342365}
   - component: {fileID: 7141196150280342363}
-  - component: {fileID: 7141196150280342364}
+  - component: {fileID: 7500905588218538512}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Enemy
@@ -47,8 +47,8 @@ MonoBehaviour:
   NameTargetAttack: Player
   targetEnemy: {fileID: 7141196150881762697}
   DamageEnemy: 3.61
---- !u!61 &7141196150280342364
-BoxCollider2D:
+--- !u!58 &7500905588218538512
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,19 +60,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008612007, y: -0.14998266}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.014359534, y: 0.01589948}
-  m_EdgeRadius: 0
+  m_Radius: 0.085
 --- !u!1 &7141196150881762702
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,13 +197,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7141196150881762702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0021801293, y: 0.00872229}
+  m_Offset: {x: -0.0011266768, y: 0.00872229}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -224,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11791235, y: 0.1920273}
+  m_Size: {x: 0.09278065, y: 0.1920273}
   m_EdgeRadius: 0
 --- !u!114 &7141196150881762696
 MonoBehaviour:
@@ -240,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   enemyName: Mole
+  animator: {fileID: 7141196150881762699}
   moveSpeedE: 1
   chaseRadius: 4
-  attackRadius: 0.25
+  attackRadius: 0.13

@@ -9951,7 +9951,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -9999,7 +9999,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10058,7 +10058,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002009064, y: -0.02890566}
+  m_Offset: {x: -0.0013888143, y: -0.038211346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10069,7 +10069,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.105933726, y: 0.20159978}
+  m_Size: {x: 0.08732609, y: 0.1829884}
   m_EdgeRadius: 0
 --- !u!114 &1697000534
 MonoBehaviour:
@@ -10553,7 +10553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7141196150881762702, guid: 354ec5b8775f1cc41bb00f17ef8976e0, type: 3}
-  TimeCreatEnemy: 3.59
+  TimeCreatEnemy: 2
   isCreatEnemy: 1
 --- !u!4 &1934908322
 Transform:

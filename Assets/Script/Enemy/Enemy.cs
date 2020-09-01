@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float health;
     public string enemyName;
+    public Animator animator;
     //public bool State = false;
     
    
@@ -14,14 +15,18 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D tag)
     {
+        
         if (tag.gameObject.tag == "Arrow")
         {
+            animator.SetTrigger("Hurt");
             Arrow hit = tag.gameObject.GetComponent<Arrow>();
             if(health - hit.Damage <= 0)
             {
                 Player AddPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
                 AddPoint.point += 10;
-                Destroy(this.gameObject);
+                moveSpeedE = 0;
+                animator.SetBool("Death", true);
+                StartCoroutine(Des(this.gameObject));
 
             }else
                 health -= hit.Damage;
@@ -30,6 +35,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    IEnumerator Des(GameObject enemy) {
+        yield return new WaitForSeconds(0.7f);
+        Destroy(enemy);
+    }
 
     private Transform target;
     public float chaseRadius;
