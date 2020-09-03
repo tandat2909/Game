@@ -10487,7 +10487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7141196150881762702, guid: 354ec5b8775f1cc41bb00f17ef8976e0, type: 3}
-  amountCreate: 0
+  amountCreate: 10
   isCreateEnemy: 0
 --- !u!4 &1934908322
 Transform:

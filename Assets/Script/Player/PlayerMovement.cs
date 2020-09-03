@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 
@@ -23,12 +26,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        change = Vector2.zero;
+        change = new Vector2(0,0);
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-
-       // cam.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
+        rb.velocity = new Vector2(0, 0);
         
+        rb.constraints = change == new Vector2(0, 0) ? RigidbodyConstraints2D.FreezeAll: RigidbodyConstraints2D.FreezeRotation;
+       
+
         mouespos = cam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
