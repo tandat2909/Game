@@ -1,36 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class main : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject enemy;
-    public float TimeCreatEnemy;
+    public int amountCreate;
+    //public float TimeCreatEnemy;
+    List<Vector3> listCong;
     
-    public bool isCreatEnemy = false;
+    public bool isCreateEnemy = false;
     
     void Start()
     {
-            
-        if (isCreatEnemy)
+        listCong = new List<Vector3>()
         {
-            StartCoroutine(CreatEnemy());
-        } 
+            new Vector3(-0.7f ,3.257f,enemy.transform.position.z),
+            new Vector3(5.833f,3.261f,enemy.transform.position.z)
+        };
+      StartCoroutine(CreatEnemy());
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        GameObject[] listEnmeyLiving = GameObject.FindGameObjectsWithTag("Enemy");
+        isCreateEnemy = listEnmeyLiving.Length == 0 ?true: false;
     }
     IEnumerator CreatEnemy()
     {
-        if (isCreatEnemy)
+        if (isCreateEnemy)
         {
-            GameObject a = Instantiate(enemy);
-            a.transform.position = new Vector3(Random.Range(-5.8f, 6.4f), Random.Range(-2.8f, 3.4f), enemy.transform.position.z);
-            yield return new WaitForSeconds(TimeCreatEnemy);
+            int pos = Random.Range(0, listCong.Count);
+            //Debug.Log(pos);
+            for (int i = 1; i <= amountCreate; i++)
+            {
+                GameObject a = Instantiate(enemy);
+                a.transform.position = listCong[pos];
+                yield return new WaitForSeconds(0.5f);
+            }
+            //yield return new WaitForSeconds(TimeCreatEnemy);
 
         }
         yield return null;

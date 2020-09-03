@@ -22,10 +22,11 @@ public class Enemy : MonoBehaviour
             Arrow hit = tag.gameObject.GetComponent<Arrow>();
             if(health - hit.Damage <= 0)
             {
-                Player AddPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-                AddPoint.point += 10;
+                
                 moveSpeedE = 0;
                 animator.SetBool("Death", true);
+                gameObject.GetComponent<Collider2D>().isTrigger = true;
+                this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 StartCoroutine(Des(this.gameObject));
 
             }else
@@ -38,6 +39,9 @@ public class Enemy : MonoBehaviour
     IEnumerator Des(GameObject enemy) {
         yield return new WaitForSeconds(0.7f);
         Destroy(enemy);
+        Player AddPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        AddPoint.point += 10;
+        
     }
 
     private Transform target;
@@ -56,8 +60,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         CheckDistance();
-        Rigidbody2D rbenemy = GetComponent<Rigidbody2D>();
-        rbenemy.velocity = new Vector2(0, 0);
+        //Rigidbody2D rbenemy = GetComponent<Rigidbody2D>();
+        //rbenemy.velocity = new Vector2(0, 0);
     }
     void CheckDistance()
     {

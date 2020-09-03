@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public bool status = true;
     public float point = 0;
     public Text pointText;
-    
+
+
     void FixedUpdate()
     {
         if (!status)
@@ -22,4 +23,7 @@ public class Player : MonoBehaviour
     {
         return number < 9 ? "0000" + number : number < 99 ? "000" + number : number < 999 ? "00" + number : number < 9999 ? "0" + number : "" + number;
     }
+
+
+
 }
