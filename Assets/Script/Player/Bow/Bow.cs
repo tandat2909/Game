@@ -23,6 +23,7 @@ public class Bow : MonoBehaviour
         {
             Rotation();
             Shoot();
+          
         }
     }
 

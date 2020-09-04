@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class Blood: Items
 {
-    void Start()
+    public override void UseItem()
+    {
+        PlayerHeart heart = GameObject.FindWithTag("Player").GetComponent<PlayerHeart>();
+       
+        heart.Blood = heart.Blood + base.ThongSo >= heart.MaxBlood?heart.MaxBlood: heart.Blood+ base.ThongSo ;
+    }
+
+    void Awake()
     {
         NameItem = "Blood";
-        thongso = 100f;
-        ChuaNang = "HoiMau";
-
+        //base.ThongSo = 20f;
     }
     
 }

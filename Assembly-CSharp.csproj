@@ -76,6 +76,8 @@
     <Compile Include="Assets\Script\Player\PlayerHeart.cs" />
     <Compile Include="Assets\Script\Item\Blood.cs" />
     <Compile Include="Assets\Script\Main\main.cs" />
+    <Compile Include="Assets\Script\Item\TocChay.cs" />
+    <Compile Include="Assets\Script\Item\TangSatThuong.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/unity/GameGitHub/edit-map/Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

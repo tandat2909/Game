@@ -8,13 +8,14 @@ public class PlayerHeart : MonoBehaviour
     public Slider sliderBlood;
     
     public float Blood = 100;
+    public float MaxBlood = 100;
     
     
     void Start()
     {
         
-        sliderBlood.maxValue = Blood;
-        sliderBlood.value = Blood;
+        sliderBlood.maxValue = MaxBlood;
+        sliderBlood.value = MaxBlood;
         
     }
     void FixedUpdate()
@@ -30,22 +31,7 @@ public class PlayerHeart : MonoBehaviour
         sliderBlood.value = Blood;
     }
     
-    void OnTriggerEnter2D(Collider2D target)
-    {
-        
-        if (target.gameObject.tag == "itemMau")
-        {
-           if(Blood + 50 >= sliderBlood.maxValue)
-            {
-                Blood = 100;
-            }else
-            Blood += 50;
-           
-            Destroy(target.gameObject);
-        }
-        sliderBlood.value = Blood;
 
-    }
 
     public void _NoClickChanged()
     {

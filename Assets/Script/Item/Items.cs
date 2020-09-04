@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Items
+public abstract class Items:MonoBehaviour
 {
-    public float IDItem;
-    public string NameItem;
-    public string ChuaNang;
-    public float thongso;
+    [SerializeField]
+    private int idItem;
+    [SerializeField]
+    private string nameItem;
+    [SerializeField]
+    private float thongSo;
+    [SerializeField]
+    private string sourceImg;
+
+    public float ThongSo { get => thongSo; set => thongSo = value; }
+    public string NameItem { get => nameItem; set => nameItem = value; }
+    public int IdItem { get => idItem; set => idItem = value; }
+    public string SourceImg { get => sourceImg; set => sourceImg = value; }
+
+    public abstract void UseItem();
 
 
 }

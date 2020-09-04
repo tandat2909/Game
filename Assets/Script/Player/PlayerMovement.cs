@@ -10,8 +10,8 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private float moveSpeed;
+   
+    public float moveSpeed;
     public Rigidbody2D rb;
     public Animator animator;
     private Vector2 change;

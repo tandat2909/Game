@@ -36,6 +36,8 @@ public class main : MonoBehaviour
         {
             int pos = Random.Range(0, listCong.Count);
             //Debug.Log(pos);
+            amountCreate += 5;
+            //Debug.Log(amountCreate);
             for (int i = 1; i <= amountCreate; i++)
             {
                 GameObject a = Instantiate(enemy);

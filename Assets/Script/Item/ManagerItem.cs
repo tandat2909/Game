@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class ManagerItem
 {
     List<Items> listItem = new List<Items>();
-    
-    Items traVeitem (string NameItem)
+
+    public List<Items> ListItem { get => listItem; }
+
+    public Items SearchItem(string NameItem)
     {
         foreach(Items i in listItem)
         {
@@ -17,28 +21,33 @@ public class ManagerItem
         }
         return null;
     }
-    Items traVeitem(float ID)
+   public  Items SearchItem(float ID)
     {
         foreach(Items i in listItem)
         {
-            if(i.IDItem == ID)
+            if(i.IdItem == ID)
             {
                 return i;
             }
         }
         return null;
     }
-    void addItem(Items item)
+    public void AddItem(Items item)
     {
         if (item != null)
         listItem.Add(item);
     }
-    void removeItem(Items item)
+    public void RemoveItem(Items item)
     {
-        if(item != null)
+        if (item != null)
         {
             listItem.Remove(item);
+
         }
+    }
+    public void RemoveItem(int index)
+    {
+        listItem.RemoveAt(index);
     }
 
 }
