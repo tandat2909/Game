@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHeart : MonoBehaviour
+public class PlayerHeart : MonoBehaviour,IHealth
 {
     public Slider sliderBlood;
     
@@ -38,7 +37,14 @@ public class PlayerHeart : MonoBehaviour
         sliderBlood.value = Blood;
     }
 
+    public void TakeDamage(float damage)
+    {
+        Blood -= Blood - damage <= 0 ? 0 : damage;
+       
+    }
 
-
-   
+    public void AddHealth(float addHealth)
+    {
+       Blood = Blood + addHealth >= MaxBlood ? MaxBlood : Blood + addHealth;
+    }
 }

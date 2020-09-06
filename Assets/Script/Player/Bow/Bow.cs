@@ -7,20 +7,29 @@ public class Bow : MonoBehaviour
     // Start is called before the first frame update
     
     public GameObject arrow;
+    public GameObject Ulti;
     public float SpeedArrow;
     private Vector2 mouesposs;
     public Camera Mousecam;
     public Rigidbody2D rbb;
-
+    public bool UltiActive = false;
+    public float amoutUlti;
+    private float countUlti =0;
+    
     void Start()
     {
     }
 
 
     void Update() {
+        
         mouesposs = Mousecam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0)) 
         {
+            if (UltiActive)
+            {
+                CountUlti();
+            }
             Rotation();
             Shoot();
           
@@ -34,13 +43,22 @@ public class Bow : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(lookDir.x, lookDir.y, angle);
     }
     void Shoot() {
-        GameObject fire = Instantiate(arrow,transform.position,transform.rotation);
+        GameObject fire = Instantiate(UltiActive ? Ulti: arrow, transform.position, transform.rotation) ;
         if (fire != null)
         {
-           
             Rigidbody2D rbb = fire.GetComponent<Rigidbody2D>();
             rbb.AddForce(this.transform.up * SpeedArrow, ForceMode2D.Impulse);
         } 
     }
 
+    void CountUlti() {
+        countUlti++;
+        if(countUlti > amoutUlti)
+        {
+            UltiActive = false;
+        }        
+
+    }
+
+    
 }

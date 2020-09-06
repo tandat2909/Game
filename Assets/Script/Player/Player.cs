@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     public float point = 0;
     public Text pointText;
     ManagerItem managerItem;
+
+   
+
     void Awake()
     {
         managerItem = new ManagerItem();
@@ -36,7 +39,8 @@ public class Player : MonoBehaviour
         {
             Items itemtemp = item.gameObject.GetComponent<Items>();
             managerItem.AddItem(itemtemp);
-            
+            GameObject.Find("ItemMau").GetComponent<Image>().sprite = itemtemp.SourceImg;
+            //item.gameObject.SetActive(false);
             Destroy(item.gameObject);
             if(managerItem.ListItem.Count > 0)
             {
@@ -68,7 +72,7 @@ public class Player : MonoBehaviour
         {
             Items used = managerItem.ListItem[index - 1];
             used.UseItem();
-            managerItem.ListItem.Remove(used);
+            //managerItem.ListItem.Remove(used);
          
            
         }

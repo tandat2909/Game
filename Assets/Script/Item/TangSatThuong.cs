@@ -15,7 +15,7 @@ public class TangSatThuong : Items
 
     void Awake()
     {
-        NameItem = "Blood";
+        NameItem = "TangSatThuong";
         //base.ThongSo = 20f;
     }
 

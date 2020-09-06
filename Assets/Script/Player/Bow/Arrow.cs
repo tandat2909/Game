@@ -18,12 +18,20 @@ public class Arrow : MonoBehaviour
         
     }
 
+
+
+
+
     void OnTriggerEnter2D(Collider2D tag)
     {
         if (tag.gameObject.tag == "wall")
         {
-
             Destroy(gameObject);
+        }
+        if(tag.gameObject.tag == "Enemy")
+        {
+            tag.gameObject.GetComponent<IHealth>().TakeDamage(Damage);
+            Destroy(this.gameObject);
         }
        
     }

@@ -55,16 +55,8 @@ public class EnemyAttacking : MonoBehaviour
         
         if (target.tag == "Player")
         {
-            PlayerHeart heartPlayer = target.GetComponent<PlayerHeart>();
-            if (heartPlayer.Blood - DamageEnemy <= 0)
-            {
-                heartPlayer.Blood = 0;
-                
-            }
-                
-            else
-                heartPlayer.Blood -= DamageEnemy;
-
+            IHealth health = target.GetComponent<IHealth>();
+            health.TakeDamage(DamageEnemy);
         }
     }
 

@@ -59,12 +59,16 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Player\Bow\Arrow.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyAttacking.cs" />
+    <Compile Include="Assets\Script\InterFace\IHealth.cs" />
     <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\Item\TangSatThuong.cs" />
+    <Compile Include="Assets\Script\Item\ultiMate.cs" />
     <Compile Include="Assets\Script\Player\Bow\Bow.cs" />
     <Compile Include="Assets\Script\Fade\FadeSprite.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\Item\RotationHeart.cs" />
     <Compile Include="Assets\Script\Item\ManagerItem.cs" />
+    <Compile Include="Assets\Script\Item\TocChay.cs" />
     <Compile Include="Assets\Script\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Script\Player\KnockBack.cs" />
     <Compile Include="Assets\Script\Player\PlayerCombat.cs" />
@@ -72,12 +76,11 @@
     <Compile Include="Assets\Script\Item\Items.cs" />
     <Compile Include="Assets\Script\Menu\MainMenu.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Player\Bow\ArrowUlti.cs" />
     <Compile Include="Assets\Script\Enemy\RotationGun.cs" />
     <Compile Include="Assets\Script\Player\PlayerHeart.cs" />
     <Compile Include="Assets\Script\Item\Blood.cs" />
     <Compile Include="Assets\Script\Main\main.cs" />
-    <Compile Include="Assets\Script\Item\TocChay.cs" />
-    <Compile Include="Assets\Script\Item\TangSatThuong.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/unity/GameGitHub/edit-map/Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

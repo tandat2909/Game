@@ -1,10 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
+
 using UnityEngine;
-using UnityEngine.Assertions;
-using UnityEngine.Assertions.Must;
-using UnityEngine.UI;
+
 
 
 public class PlayerMovement : MonoBehaviour

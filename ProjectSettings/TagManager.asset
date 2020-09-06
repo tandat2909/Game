@@ -9,6 +9,8 @@ TagManager:
   - Arrow
   - bienCam
   - Item
+  - Ulti
+  - BoxItem
   layers:
   - Default
   - TransparentFX

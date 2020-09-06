@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Arrow
+    - ArrowUlti
+    - Blood
     - Bow
     - CameraMovement
     - EnemyAttacking
@@ -12,7 +14,10 @@ ScriptsOnlyBuild:
     - Player
     - PlayerHeart
     - PlayerMovement
+    - TangSatThuong
+    - TocChay
     - main
+    - ultiMate
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -23,12 +28,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -67,17 +66,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12106}
     - Class: 114
-      Script: {instanceID: 12824}
+      Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 13602}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13916}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 14432}
+      Script: {instanceID: 14442}
     - Class: 114
-      Script: {instanceID: 15068}
+      Script: {instanceID: 15078}
     - Class: 114
-      Script: {instanceID: 15114}
+      Script: {instanceID: 15124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -138,31 +137,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12306}
     - Class: 114
-      Script: {instanceID: 12392}
+      Script: {instanceID: 12394}
     - Class: 114
-      Script: {instanceID: 12744}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12512}
     - Class: 114
-      Script: {instanceID: 12824}
+      Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 12856}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 13500}
+      Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 13740}
+      Script: {instanceID: 12862}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 13478}
     - Class: 114
-      Script: {instanceID: 14432}
+      Script: {instanceID: 13508}
     - Class: 114
-      Script: {instanceID: 14526}
+      Script: {instanceID: 13748}
     - Class: 114
-      Script: {instanceID: 14950}
+      Script: {instanceID: 13768}
     - Class: 114
-      Script: {instanceID: 15068}
+      Script: {instanceID: 14120}
     - Class: 114
-      Script: {instanceID: 15114}
+      Script: {instanceID: 14442}
+    - Class: 114
+      Script: {instanceID: 14536}
+    - Class: 114
+      Script: {instanceID: 14812}
+    - Class: 114
+      Script: {instanceID: 14960}
+    - Class: 114
+      Script: {instanceID: 15078}
+    - Class: 114
+      Script: {instanceID: 15124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -354,6 +363,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: bd8ad98828090275a6b5d49df1f9cbfd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TangSatThuong
+  - hash:
+      serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -384,6 +399,12 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
+      Hash: bd8ad98828090275a6b5d49df1f9cbfd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ultiMate
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -402,7 +423,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 077d64f6fb4e7d4aa8b779a49ed3d68b
+      Hash: fd28aef130984665e7ea0d097f91d1c2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bow
@@ -492,6 +513,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: bd8ad98828090275a6b5d49df1f9cbfd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TocChay
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -534,7 +561,7 @@ ScriptsOnlyBuild:
     className: PlayerCombat
   - hash:
       serializedVersion: 2
-      Hash: 8d9b614dce47a45be6e42a646c2f1e00
+      Hash: 8e417e1ab07f91c6ff89f904f9e74735
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyMole
@@ -570,7 +597,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 8d9b614dce47a45be6e42a646c2f1e00
+      Hash: 8e417e1ab07f91c6ff89f904f9e74735
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -618,6 +645,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 46395500fc479d714d8a1f79f5bf0484
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ArrowUlti
+  - hash:
+      serializedVersion: 2
       Hash: f3d1cc0280cfedb24eb4b25e88c569e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -648,7 +681,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 8b1a046ae6b30799ae813653749be7dd
+      Hash: 30ecded1201ecf1472b72d13ebe13c03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerHeart
@@ -664,6 +697,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: bd8ad98828090275a6b5d49df1f9cbfd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Blood
   - hash:
       serializedVersion: 2
       Hash: a2612813f45d0ced02c3e4bc9dbea8b4
@@ -770,4 +809,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: F:/unity/GameGitHub/edit-map/Build/KHOVL.exe
+  playerPath: F:/unity/GameGitHub/edit-map/Game/Build/KHOVL.exe
