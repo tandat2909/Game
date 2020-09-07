@@ -1,18 +1,40 @@
 ﻿
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Blood: Items
 {
-    public override void UseItem()
+    public override bool UseItem()
     {
-       IHealth health = GameObject.FindWithTag("Player").GetComponent<IHealth>();
-        health.AddHealth(base.ThongSo);
+        if (StatusItem)
+        {
+            IHealth health = GameObject.FindWithTag("Player").GetComponent<IHealth>();
+            health.AddHealth(base.ThongSo);
+            StatusItem = false;
+
+            
+        }
+        return TurnOffItem();
     }
 
-    void Awake()
+    public override bool TurnOffItem()
     {
-        NameItem = "Blood";
-        //base.ThongSo = 20f;
+        try
+        {
+            StatusItem = false;
+            GameObject.Find("Item" + ID.ToString()).GetComponent<Image>().enabled = false;
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
+    public Blood()
+    {
+        ID = IdItem.Heart;
+    }
+    
     
 }

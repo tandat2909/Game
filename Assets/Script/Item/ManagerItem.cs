@@ -1,50 +1,55 @@
 ﻿
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class ManagerItem
+public class ManagerItem:MonoBehaviour
 {
-    List<Items> listItem = new List<Items>();
-
-    public List<Items> ListItem { get => listItem; }
-
-    public Items SearchItem(string NameItem)
+    public List<Items> ListItem { get; set; }
+    void Start()
     {
-        foreach(Items i in listItem)
+        ListItem = new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(),new ultiMate() };
+        //Debug.Log(ListItem[0].IdItem + " id " + ListItem[1].IdItem );
+    }
+    public int SearchID(IdItem ID)
+    {
+        for(int i = 0; i < ListItem.Count; i++)
         {
-            if(i.NameItem == NameItem)
+            if(ID == ListItem[i].ID)
             {
                 return i;
             }
+            
         }
-        return null;
+        
+        return -1;
     }
-   public  Items SearchItem(float ID)
+   
+    void FixedUpdate()
     {
-        foreach(Items i in listItem)
+        Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
+        if (!a.UltiActive)
         {
-            if(i.IdItem == ID)
+            Items ulti = ListItem[SearchID(IdItem.Ultimate)];
+            if (ListItem[SearchID(IdItem.Heart)].StatusItem && ListItem[SearchID(IdItem.Shoe)].StatusItem && ListItem[SearchID(IdItem.Dangger)].StatusItem)
             {
-                return i;
+
+                GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = true;
+                ulti.StatusItem = true;
+
+            }
+            else
+            {
+                GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = false;
+                ulti.StatusItem = false;
             }
         }
-        return null;
-    }
-    public void AddItem(Items item)
-    {
-        if (item != null)
-        listItem.Add(item);
-    }
-    public void RemoveItem(Items item)
-    {
-        if (item != null)
-        {
-            listItem.Remove(item);
 
-        }
+      
     }
-    public void RemoveItem(int index)
-    {
-        listItem.RemoveAt(index);
-    }
+
+    
+
 
 }

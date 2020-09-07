@@ -4,20 +4,23 @@ using UnityEngine;
 public abstract class Items:MonoBehaviour
 {
     [SerializeField]
-    private int idItem;
+    private IdItem Id;
     [SerializeField]
     private string nameItem;
     [SerializeField]
     private float thongSo;
     [SerializeField]
     private Sprite sourceImg;
+    private bool statusItem = false;
 
+    public bool StatusItem { set => statusItem = value; get => statusItem; }
     public float ThongSo { get => thongSo; set => thongSo = value; }
     public string NameItem { get => nameItem; set => nameItem = value; }
-    public int IdItem { get => idItem; set => idItem = value; }
-    public Sprite SourceImg { get => sourceImg; set => sourceImg = value; }
+    public IdItem ID { set; get; }
+   
 
-    public abstract void UseItem();
+    public abstract bool UseItem();
+    public abstract bool TurnOffItem();
 
 
 }

@@ -9,15 +9,8 @@ public class Player : MonoBehaviour
     public bool status = true;
     public float point = 0;
     public Text pointText;
-    ManagerItem managerItem;
-
-   
-
-    void Awake()
-    {
-        managerItem = new ManagerItem();
-    }
-
+    public ManagerItem managerItem;
+    
     void FixedUpdate()
     {
         if (!status)
@@ -26,61 +19,33 @@ public class Player : MonoBehaviour
             Debug.Log("die");
             Time.timeScale = 0;
         }
-        pointText.text = formatPoint(point);
+        pointText.text = point.ToString();
     }
-    private string formatPoint(float number)
-    {
-        return number < 9 ? "0000" + number : number < 99 ? "000" + number : number < 999 ? "00" + number : number < 9999 ? "0" + number : "" + number;
-    }
+   
     
     void OnTriggerEnter2D(Collider2D item)
     {
         if(item.gameObject.tag == "Item")
         {
             Items itemtemp = item.gameObject.GetComponent<Items>();
-            managerItem.AddItem(itemtemp);
-            GameObject.Find("ItemMau").GetComponent<Image>().sprite = itemtemp.SourceImg;
-            //item.gameObject.SetActive(false);
+            ActivateItem(itemtemp);
             Destroy(item.gameObject);
-            if(managerItem.ListItem.Count > 0)
-            {
-              //  Debug.Log("add item thanh cong");
-            }
+            
         }
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            useItem(1);
-           
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            useItem(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            useItem(3);
-        }
-
-    }
-
-    void useItem(int index)
+    void ActivateItem(Items item)
     {
         try
         {
-            Items used = managerItem.ListItem[index - 1];
-            used.UseItem();
-            //managerItem.ListItem.Remove(used);
-         
-           
-        }
-        catch (ArgumentOutOfRangeException e)
-        {
-            //Debug.Log("Không có Item dùng cái gì ?? " + e.Message + " " + e.ParamName);
-        }
+            item.StatusItem = true;
+            managerItem.ListItem[managerItem.SearchID(item.ID)] = item;
+            GameObject.Find(item.NameItem.Trim()).GetComponent<Image>().enabled = true;
 
+            
+        }catch(Exception e)
+        {
+            Debug.Log("fail ActivateItem: " + e.Message + " " + e.StackTrace + " " + managerItem.SearchID(item.ID));
+        }
     }
 
 

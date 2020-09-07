@@ -39,7 +39,8 @@ public class PlayerHeart : MonoBehaviour,IHealth
 
     public void TakeDamage(float damage)
     {
-        Blood -= Blood - damage <= 0 ? 0 : damage;
+        Blood -= damage;
+        
        
     }
 

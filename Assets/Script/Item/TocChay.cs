@@ -1,20 +1,37 @@
 ﻿
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TocChay:Items
+public class TocChay : Items
 {
-    public override void UseItem()
+    public override bool  UseItem()
     {
-        PlayerMovement movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
-        movement.moveSpeed += ThongSo;
-       // this.enabled = false;
+        if (StatusItem)
+        {
+            PlayerMovement movement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+            movement.moveSpeed += ThongSo;
+                      
+        }
+        return TurnOffItem();
     }
-
-    void Awake()
+    public override bool TurnOffItem()
     {
-
-       // base.ThongSo = 3f;
-        base.NameItem = "TocChay";
+        try
+        {
+            StatusItem = false;
+            GameObject.Find("Item" + ID.ToString()).GetComponent<Image>().enabled = false;
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+    public TocChay()
+    {
+        ID = IdItem.Shoe;   
+      
     }
 
 }

@@ -2,21 +2,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TangSatThuong : Items
 {
-    public override void UseItem()
+    public override bool UseItem()
     {
-        Arrow arrow = GameObject.FindWithTag("Player").GetComponentInChildren<Bow>().arrow.GetComponent<Arrow>();
-        arrow.Damage += base.ThongSo;
-        
-        
+        if (StatusItem)
+        {
+            Arrow arrow = GameObject.FindWithTag("Player").GetComponentInChildren<Bow>().arrow.GetComponent<Arrow>();
+            arrow.Damage += base.ThongSo;
+           
+          
+        }
+        return TurnOffItem();
+    }
+    public override bool TurnOffItem()
+    {
+        try
+        {
+            StatusItem = false;
+            GameObject.Find("Item" + ID.ToString()).GetComponent<Image>().enabled = false;
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
-    void Awake()
-    {
-        NameItem = "TangSatThuong";
-        //base.ThongSo = 20f;
+    public TangSatThuong() {
+        ID = IdItem.Dangger;
+       
     }
 
 }

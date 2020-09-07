@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bow : MonoBehaviour
 {
@@ -13,15 +14,29 @@ public class Bow : MonoBehaviour
     public Camera Mousecam;
     public Rigidbody2D rbb;
     public bool UltiActive = false;
-    public float amoutUlti;
-    private float countUlti =0;
-    
+    [SerializeField]
+    private int amoutUlti;
+    [SerializeField]
+    private int countUlti;
+    [SerializeField]
+    private Image ItemUltimate;
+    private Text txtCountUlti;
+
+
     void Start()
     {
+        
+        countUlti = amoutUlti =5;
+        txtCountUlti = ItemUltimate.gameObject.GetComponentInChildren<Text>();
     }
 
 
     void Update() {
+
+
+    
+        txtCountUlti.text = UltiActive? countUlti.ToString() : "";
+
         
         mouesposs = Mousecam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0)) 
@@ -51,12 +66,21 @@ public class Bow : MonoBehaviour
         } 
     }
 
+    void FixedUpdate()
+    {
+        
+    }
+
     void CountUlti() {
-        countUlti++;
-        if(countUlti > amoutUlti)
+        
+        if (countUlti == 0)
         {
             UltiActive = false;
-        }        
+            countUlti = amoutUlti;
+            ItemUltimate.enabled = false;
+
+        }else countUlti--;
+
 
     }
 
