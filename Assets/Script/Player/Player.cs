@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,IIncreaseDangger
 {
     public bool status = true;
     public float point = 0;
     public Text pointText;
+    public float Damage;
     public ManagerItem managerItem;
     
     void FixedUpdate()
@@ -25,12 +26,18 @@ public class Player : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D item)
     {
+        
         if(item.gameObject.tag == "Item")
         {
             Items itemtemp = item.gameObject.GetComponent<Items>();
-            ActivateItem(itemtemp);
-            Destroy(item.gameObject);
-            
+            if (!managerItem.SearchItem(itemtemp.ID).StatusItem)
+            {
+
+                ActivateItem(itemtemp);
+                item.gameObject.GetComponent<Collider2D>().enabled = false;
+                item.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+            }
         }
     }
     void ActivateItem(Items item)
@@ -38,15 +45,20 @@ public class Player : MonoBehaviour
         try
         {
             item.StatusItem = true;
-            managerItem.ListItem[managerItem.SearchID(item.ID)] = item;
+            
+            managerItem.ListItem[managerItem.IndexOf(item.ID)] = item;
+              
             GameObject.Find(item.NameItem.Trim()).GetComponent<Image>().enabled = true;
 
             
         }catch(Exception e)
         {
-            Debug.Log("fail ActivateItem: " + e.Message + " " + e.StackTrace + " " + managerItem.SearchID(item.ID));
+            Debug.Log("fail ActivateItem: " + e.Message + " " + e.StackTrace );
         }
     }
 
-
+    public void Add(float thongso)
+    {
+        Damage += thongso;
+    }
 }

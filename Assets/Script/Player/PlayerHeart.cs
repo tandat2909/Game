@@ -44,8 +44,10 @@ public class PlayerHeart : MonoBehaviour,IHealth
        
     }
 
+   
+
     public void AddHealth(float addHealth)
     {
-       Blood = Blood + addHealth >= MaxBlood ? MaxBlood : Blood + addHealth;
+        Blood = Blood + addHealth >= MaxBlood ? MaxBlood : Blood + addHealth;
     }
 }

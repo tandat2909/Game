@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour,IIncreaseShoe
 {
     // Start is called before the first frame update
    
@@ -84,5 +84,9 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + change * moveSpeed * Time.deltaTime);
        // this.transform.position += change * moveSpeed * Time.deltaTime;
     }
-   
+
+    public void Add(float thongso)
+    {
+        moveSpeed += thongso;
+    }
 }

@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using UnityEngine;
 
 public abstract class Items:MonoBehaviour
@@ -22,5 +23,6 @@ public abstract class Items:MonoBehaviour
     public abstract bool UseItem();
     public abstract bool TurnOffItem();
 
+    
 
 }

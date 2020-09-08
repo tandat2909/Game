@@ -4,52 +4,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManagerItem:MonoBehaviour
+public class ManagerItem : MonoBehaviour
 {
-    public List<Items> ListItem { get; set; }
-    void Start()
+    public List<Items> ListItem;//=  new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(),new ultiMate() };
+    void Awake()
     {
-        ListItem = new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(),new ultiMate() };
+        ListItem = new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(), new ultiMate() };
         //Debug.Log(ListItem[0].IdItem + " id " + ListItem[1].IdItem );
     }
-    public int SearchID(IdItem ID)
+    public int IndexOf(IdItem ID)
     {
-        for(int i = 0; i < ListItem.Count; i++)
+        for (int i = 0; i < ListItem.Count; i++)
         {
-            if(ID == ListItem[i].ID)
+            if (ID == ListItem[i].ID)
             {
                 return i;
             }
-            
+
         }
-        
+
         return -1;
     }
-   
+    public Items SearchItem(IdItem ID)
+    {
+        foreach (Items i in ListItem)
+        {
+            if (ID == i.ID) return i;
+        }
+        return null;
+    }
     void FixedUpdate()
     {
         Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
         if (!a.UltiActive)
         {
-            Items ulti = ListItem[SearchID(IdItem.Ultimate)];
-            if (ListItem[SearchID(IdItem.Heart)].StatusItem && ListItem[SearchID(IdItem.Shoe)].StatusItem && ListItem[SearchID(IdItem.Dangger)].StatusItem)
+            if (ListItem != null)
             {
+                Items ulti = SearchItem(IdItem.Ultimate);
+                if (SearchItem(IdItem.Heart).StatusItem && SearchItem(IdItem.Shoe).StatusItem && SearchItem(IdItem.Dangger).StatusItem)
+                {
 
-                GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = true;
-                ulti.StatusItem = true;
+                    GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = true;
+                    ulti.StatusItem = true;
 
-            }
-            else
-            {
-                GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = false;
-                ulti.StatusItem = false;
+                }
+                else
+                {
+                    GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = false;
+                    ulti.StatusItem = false;
+                }
             }
         }
 
-      
+
     }
-
-    
-
 
 }

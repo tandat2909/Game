@@ -36,8 +36,7 @@ public class Bow : MonoBehaviour
 
     
         txtCountUlti.text = UltiActive? countUlti.ToString() : "";
-
-        
+               
         mouesposs = Mousecam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0)) 
         {
@@ -58,6 +57,7 @@ public class Bow : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(lookDir.x, lookDir.y, angle);
     }
     void Shoot() {
+        arrow.GetComponent<Arrow>().Damage =GameObject.Find("Player").GetComponent<Player>().Damage;
         GameObject fire = Instantiate(UltiActive ? Ulti: arrow, transform.position, transform.rotation) ;
         if (fire != null)
         {

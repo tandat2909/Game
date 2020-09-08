@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour,IHealth
     public float moveSpeedE;
     private Transform target;
     public float chaseRadius;
-    public float attackRadius;
+    public float attackRadius;  
 
 
     // Start is called before the first frame update

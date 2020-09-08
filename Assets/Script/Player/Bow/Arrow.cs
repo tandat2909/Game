@@ -6,6 +6,7 @@ public class Arrow : MonoBehaviour
 {
     public float Damage;
 
+
     void OnTriggerEnter2D(Collider2D tag)
     {
         if (tag.gameObject.tag == "wall")
