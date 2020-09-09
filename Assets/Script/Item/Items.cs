@@ -14,6 +14,9 @@ public abstract class Items:MonoBehaviour
     private Sprite sourceImg;
     private bool statusItem = false;
 
+  
+    public float weight; 
+
     public bool StatusItem { set => statusItem = value; get => statusItem; }
     public float ThongSo { get => thongSo; set => thongSo = value; }
     public string NameItem { get => nameItem; set => nameItem = value; }

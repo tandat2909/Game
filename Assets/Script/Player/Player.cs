@@ -48,7 +48,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
             
             managerItem.ListItem[managerItem.IndexOf(item.ID)] = item;
               
-            GameObject.Find(item.NameItem.Trim()).GetComponent<Image>().enabled = true;
+            GameObject.Find("Item"+item.ID.ToString()).GetComponent<Image>().enabled = true;
 
             
         }catch(Exception e)

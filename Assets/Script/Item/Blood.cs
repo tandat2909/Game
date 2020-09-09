@@ -11,7 +11,7 @@ public class Blood: Items
         {
             IHealth health = GameObject.FindWithTag("Player").GetComponent<IHealth>();
             health.AddHealth(base.ThongSo);
-            StatusItem = false;
+            
 
             
         }
@@ -34,6 +34,7 @@ public class Blood: Items
     public Blood()
     {
         ID = IdItem.Heart;
+       
     }
     
     

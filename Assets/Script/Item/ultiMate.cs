@@ -14,7 +14,7 @@ public class ultiMate : Items
         {
             
             Bow setUlti = GameObject.Find("Player").GetComponentInChildren<Bow>();
-            
+            setUlti.countUlti = setUlti.amoutUlti;
             setUlti.UltiActive = true;
             return true;
         }
@@ -41,6 +41,7 @@ public class ultiMate : Items
     {
         ID = IdItem.Ultimate;
         NameItem = "ItemUltimate";
+        weight = 0;
         //base.ThongSo = 20f;
     }
    

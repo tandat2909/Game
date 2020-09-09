@@ -14,10 +14,10 @@ public class Bow : MonoBehaviour
     public Camera Mousecam;
     public Rigidbody2D rbb;
     public bool UltiActive = false;
-    [SerializeField]
-    private int amoutUlti;
-    [SerializeField]
-    private int countUlti;
+   
+    public int amoutUlti;
+  
+    public int countUlti;
     [SerializeField]
     private Image ItemUltimate;
     private Text txtCountUlti;

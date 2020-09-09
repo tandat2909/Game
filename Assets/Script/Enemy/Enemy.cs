@@ -66,9 +66,19 @@ public class Enemy : MonoBehaviour,IHealth
         Destroy(enemy);
         Player AddPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         AddPoint.point += 10;
+        DropItem();
 
     }
 
+    void DropItem()
+    {
+        GameObject drop = GameObject.Find("Main").GetComponent<ManagerItem>().GetItemDrop();
+        if (drop != null)
+        {
+            Instantiate(drop);
+            drop.transform.position = this.transform.position;
+        }
+    }
     public void AddHealth(float addHealth)
     {
         health += addHealth;

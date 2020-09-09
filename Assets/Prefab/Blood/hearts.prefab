@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c6050e41306c84b8c1b8626c074f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 1
   nameItem: ItemHeart
   thongSo: 50
   sourceImg: {fileID: 21300000, guid: 547309b4404bfec4e96c99605408be9c, type: 3}
+  weight: 15

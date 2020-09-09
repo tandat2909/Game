@@ -58,8 +58,8 @@ public class TocChay : Items
     }
     public TocChay()
     {
-        ID = IdItem.Shoe;   
-      
+        ID = IdItem.Shoe;
+       
     }
 
 }

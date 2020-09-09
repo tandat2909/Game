@@ -9,7 +9,7 @@ public class main : MonoBehaviour
     public GameObject enemy;
     public int amountCreate;
     //public float TimeCreatEnemy;
-    List<Vector3> listCong;
+    public List<Vector3> listCong;
     
     public bool isCreateEnemy = false;
     
@@ -34,14 +34,14 @@ public class main : MonoBehaviour
     {
         if (isCreateEnemy)
         {
-            int pos = Random.Range(0, listCong.Count);
+           // int pos = Random.Range(0, listCong.Count);
             //Debug.Log(pos);
             amountCreate += 5;
             //Debug.Log(amountCreate);
             for (int i = 1; i <= amountCreate; i++)
             {
                 GameObject a = Instantiate(enemy);
-                a.transform.position = listCong[pos];
+                a.transform.position = listCong[Random.Range(0, listCong.Count)];
                 yield return new WaitForSeconds(0.5f);
             }
             //yield return new WaitForSeconds(TimeCreatEnemy);

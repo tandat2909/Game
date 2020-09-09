@@ -61,7 +61,7 @@ public class TangSatThuong : Items
     public TangSatThuong()
     {
         ID = IdItem.Dangger;
-
+        
     }
 
 }
