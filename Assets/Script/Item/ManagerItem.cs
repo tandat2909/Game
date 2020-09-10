@@ -6,18 +6,23 @@ using UnityEngine.UI;
 
 public class ManagerItem : MonoBehaviour
 {
-    public List<Items> ListItem;//=  new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(),new ultiMate() };
+    public List<Items> ListItem =  new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(),new ultiMate() };
     public List<GameObject> lsGOItem;
     void Awake()
     {
-        //ListItem = new List<Items>() { new Blood(), new TangSatThuong(), new TocChay(), new ultiMate() };
-        //Debug.Log(ListItem[0].IdItem + " id " + ListItem[1].IdItem );
-        
+        //ListItem.Clear();
+        //foreach (GameObject item in lsGOItem)
+        //{
+        //    Items temp = item.GetComponent<Items>();
+        //    ListItem.Add(temp);
+        //}
+        //ListItem.Add(new ultiMate());
+
     }
     void Start()
     {
         ListItem.Clear();
-        foreach(GameObject item in lsGOItem)
+        foreach (GameObject item in lsGOItem)
         {
             Items temp = item.GetComponent<Items>();
             ListItem.Add(temp);
@@ -57,17 +62,23 @@ public class ManagerItem : MonoBehaviour
         }
         foreach (Items i in ListItem)
         {
-            float rand = Random.Range(0, randMax);
-            
+            float rand = Random.Range(1, randMax);
+
             //Debug.Log("rand: " + rand + "count lisitem:" + ListItem.Count);
-            sumWeight += i.weight;
-            if (rand >sumWeight)
+            Debug.Log(i.NameItem + " rand " + rand);
+            sumWeight = i.weight;
+            if (rand < sumWeight)
             {
-                Debug.Log(i.ID +"lso" + lsGOItem.Count);
-                foreach(GameObject objItem in lsGOItem)
+                if (i.NameItem != "")
                 {
-                    if (objItem.GetComponent<Items>().ID == i.ID) return objItem;
+                    Debug.Log(i.NameItem +" rand " + rand);
+                    foreach (GameObject objItem in lsGOItem)
+                    {
+                        if (objItem.GetComponent<Items>().ID == i.ID) return objItem;
+                    }
                 }
+                else return null;
+                
             }
 
         }
@@ -79,10 +90,10 @@ public class ManagerItem : MonoBehaviour
 
     void FixedUpdate()
     {
-        Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
-        if (!a.UltiActive)
+        try
         {
-            if (ListItem != null)
+            Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
+            if (!a.UltiActive)
             {
                 Items ulti = SearchItem(IdItem.Ultimate);
                 if (SearchItem(IdItem.Heart).StatusItem && SearchItem(IdItem.Shoe).StatusItem && SearchItem(IdItem.Dangger).StatusItem)
@@ -98,7 +109,9 @@ public class ManagerItem : MonoBehaviour
                     ulti.StatusItem = false;
                 }
             }
+
         }
+        catch { }
 
 
     }

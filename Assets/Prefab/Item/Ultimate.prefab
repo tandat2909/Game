@@ -96,10 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3980be83a142ee34eb3fb901344b24b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idItem: 4
+  Id: 0
   nameItem: ItemUltimate
   thongSo: 5
   sourceImg: {fileID: 21300000, guid: 9601363de01264a4a8b2ed40b75d7221, type: 3}
+  weight: 100
 --- !u!61 &8442910469494248362
 BoxCollider2D:
   m_ObjectHideFlags: 0

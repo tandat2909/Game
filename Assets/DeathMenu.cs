@@ -11,7 +11,7 @@ public class DeathMenu : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!GameObject.Find("Player").GetComponent<Player>().status)
         {

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5186464129049899010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.20951767, y: 1.1877254, z: 0}
+  m_LocalPosition: {x: 2.336986, y: 1.1041842, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,5 +144,5 @@ MonoBehaviour:
   nameItem: ItemDangger
   thongSo: 20
   sourceImg: {fileID: 21300000, guid: 11c99c330d00a774496e38b1be7e96d3, type: 3}
-  weight: 15
+  weight: 5
   TimerUse: 5

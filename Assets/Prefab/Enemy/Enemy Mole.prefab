@@ -143,9 +143,12 @@ MonoBehaviour:
   health: 100
   enemyName: Mole
   animator: {fileID: 7141196150881762699}
+  DamageEnemy: 0
   moveSpeedE: 1
   chaseRadius: 4
   attackRadius: 0.13
+  pointEnemy: 10
+  config: {fileID: 11400000, guid: f667fbce1b409e549b418f9e763b599c, type: 2}
 --- !u!114 &101012842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,5 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameTargetAttack: Player
-  targetEnemy: {fileID: 7141196150881762697}
   DamageEnemy: 10

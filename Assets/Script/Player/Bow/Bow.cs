@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Bow : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    public ConfigPlayer config;
+
     public GameObject arrow;
     public GameObject Ulti;
     public float SpeedArrow;
@@ -57,7 +58,7 @@ public class Bow : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(lookDir.x, lookDir.y, angle);
     }
     void Shoot() {
-        arrow.GetComponent<Arrow>().Damage =GameObject.Find("Player").GetComponent<Player>().Damage;
+        arrow.GetComponent<Arrow>().Damage = config.Damage;
         GameObject fire = Instantiate(UltiActive ? Ulti: arrow, transform.position, transform.rotation) ;
         if (fire != null)
         {

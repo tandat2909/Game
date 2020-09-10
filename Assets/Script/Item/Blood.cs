@@ -33,7 +33,7 @@ public class Blood: Items
     }
     public Blood()
     {
-        ID = IdItem.Heart;
+       ID = IdItem.Heart;
        
     }
     

@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour,IHealth
     public float moveSpeedE;
     private Transform target;
     public float chaseRadius;
-    public float attackRadius;  
+    public float attackRadius;
+    public float pointEnemy;
+    public ConfigPlayer config;
 
 
     // Start is called before the first frame update
@@ -52,6 +54,7 @@ public class Enemy : MonoBehaviour,IHealth
             animator.SetBool("Death", true);
             gameObject.GetComponent<Collider2D>().isTrigger = true;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
             StartCoroutine(Des(this.gameObject));
 
         }
@@ -63,10 +66,11 @@ public class Enemy : MonoBehaviour,IHealth
     IEnumerator Des(GameObject enemy)
     {
         yield return new WaitForSeconds(0.7f);
-        Destroy(enemy);
-        Player AddPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        AddPoint.point += 10;
+
+        config.Point += pointEnemy;
+        
         DropItem();
+        Destroy(enemy);
 
     }
 

@@ -6,21 +6,23 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour,IIncreaseDangger
 {
+    public ConfigPlayer config;
     public bool status = true;
-    public float point = 0;
-    public Text pointText;
-    public float Damage;
     public ManagerItem managerItem;
     
     void FixedUpdate()
     {
-        if (!status)
+        try
         {
-            // die do something
-            Debug.Log("die");
-            Time.timeScale = 0;
+            if (config.Blood <0)
+            {
+                status = false;
+                Time.timeScale = 0;
+            }
         }
-        pointText.text = point.ToString();
+        catch(Exception e) {
+            Debug.Log("FixedUpdate Player Error: " + e.Message);
+        }
     }
    
     
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
         if(item.gameObject.tag == "Item")
         {
             Items itemtemp = item.gameObject.GetComponent<Items>();
+            //Debug.Log(itemtemp.StatusItem +" ten id " + itemtemp.ID.ToString());
             if (!managerItem.SearchItem(itemtemp.ID).StatusItem)
             {
 
@@ -45,20 +48,23 @@ public class Player : MonoBehaviour,IIncreaseDangger
         try
         {
             item.StatusItem = true;
-            
             managerItem.ListItem[managerItem.IndexOf(item.ID)] = item;
-              
             GameObject.Find("Item"+item.ID.ToString()).GetComponent<Image>().enabled = true;
 
             
         }catch(Exception e)
         {
-            Debug.Log("fail ActivateItem: " + e.Message + " " + e.StackTrace );
+            Debug.Log("fail ActivateItem player: " + e.Message + " " + e.StackTrace );
         }
     }
 
     public void Add(float thongso)
     {
-        Damage += thongso;
+       config.Damage += thongso;
     }
+    public void AddPoint(float point)
+    {
+        config.Point += point;
+    }
+
 }

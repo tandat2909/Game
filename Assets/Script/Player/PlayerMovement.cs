@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour,IIncreaseShoe
 {
     // Start is called before the first frame update
-   
-    public float moveSpeed;
+
+    public ConfigPlayer config;
     public Rigidbody2D rb;
     public Animator animator;
     private Vector2 change;
@@ -81,12 +81,12 @@ public class PlayerMovement : MonoBehaviour,IIncreaseShoe
 
     void MovePlayer()
     {
-        rb.MovePosition(rb.position + change * moveSpeed * Time.deltaTime);
-       // this.transform.position += change * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + change * config.moveSpeed * Time.deltaTime);
+       // this.transform.position += change * config.moveSpeed * Time.deltaTime;
     }
 
     public void Add(float thongso)
     {
-        moveSpeed += thongso;
+        config.moveSpeed += thongso;
     }
 }
