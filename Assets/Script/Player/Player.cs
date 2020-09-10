@@ -16,6 +16,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
         {
             if (config.Blood <0)
             {
+                Debug.Log("DIe");
                 status = false;
                 Time.timeScale = 0;
             }

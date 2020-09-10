@@ -8,6 +8,10 @@ public class Text_Point : MonoBehaviour
     public Text textPoint;
     public ConfigPlayer config;
     
+    void Start()
+    {
+        updateValuePoint();
+    }
     void FixedUpdate()
     {
         updateValuePoint();
