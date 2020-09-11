@@ -93,15 +93,15 @@ public class ManagerItem : MonoBehaviour
         try
         {
             Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
-            if (!a.UltiActive)
+            if (!SearchItem(IdItem.Ultimate).StatusItem)
             {
                 Items ulti = SearchItem(IdItem.Ultimate);
                 if (SearchItem(IdItem.Heart).StatusItem && SearchItem(IdItem.Shoe).StatusItem && SearchItem(IdItem.Dangger).StatusItem)
-                {
-
+                {                    
                     GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = true;
                     ulti.StatusItem = true;
-
+                    FindObjectOfType<AudioManager>().PlaySound("Item4");
+                    
                 }
                 else
                 {

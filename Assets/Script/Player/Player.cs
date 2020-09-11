@@ -57,6 +57,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
         {
             Debug.Log("fail ActivateItem player: " + e.Message + " " + e.StackTrace );
         }
+        FindObjectOfType<AudioManager>().PlaySound("ColectItems");
     }
 
     public void Add(float thongso)

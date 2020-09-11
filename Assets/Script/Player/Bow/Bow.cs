@@ -64,7 +64,8 @@ public class Bow : MonoBehaviour
         {
             Rigidbody2D rbb = fire.GetComponent<Rigidbody2D>();
             rbb.AddForce(this.transform.up * SpeedArrow, ForceMode2D.Impulse);
-        } 
+        }
+        FindObjectOfType<AudioManager>().PlaySound("PlayerShotting");
     }
 
     void FixedUpdate()
@@ -73,14 +74,18 @@ public class Bow : MonoBehaviour
     }
 
     void CountUlti() {
-        
+
         if (countUlti == 0)
         {
             UltiActive = false;
             countUlti = amoutUlti;
             ItemUltimate.enabled = false;
 
-        }else countUlti--;
+        }
+        else
+        { countUlti--;
+            FindObjectOfType<AudioManager>().PlaySound("ShottingItem4");
+        }
 
 
     }

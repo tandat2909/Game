@@ -14,6 +14,10 @@ public abstract class Items:MonoBehaviour
     private Sprite sourceImg;
     private bool statusItem = false;
 
+    public void UsingSound() {
+        FindObjectOfType<AudioManager>().PlaySound("UsingItems");
+    }
+
   
     public float weight; 
 

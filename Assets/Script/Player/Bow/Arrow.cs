@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour
         if(tag.gameObject.tag == "Enemy")
         {
             tag.gameObject.GetComponent<IHealth>().TakeDamage(Damage);
+            FindObjectOfType<AudioManager>().PlaySound("Hitting");
             Destroy(this.gameObject);
         }
        

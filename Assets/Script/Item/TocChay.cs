@@ -14,6 +14,7 @@ public class TocChay : Items
     {
         if (StatusItem)
         {
+            UsingSound();
             movement = GameObject.FindWithTag("Player").GetComponent<IIncreaseShoe>();
             movement.Add(ThongSo);
             //StatusItem = false;    

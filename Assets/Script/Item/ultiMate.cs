@@ -12,7 +12,7 @@ public class ultiMate : Items
     {
         if (StatusItem)
         {
-            
+            UsingSound();
             Bow setUlti = GameObject.Find("Player").GetComponentInChildren<Bow>();
             setUlti.countUlti = setUlti.amoutUlti;
             setUlti.UltiActive = true;

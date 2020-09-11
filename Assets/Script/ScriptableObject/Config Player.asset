@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Config Player
   m_EditorClassIdentifier: 
   NamPlayer: playerGame
-  Damage: 71.38
-  Point: 60
-  Blood: -10
+  Damage: 111.380005
+  Point: 5420
+  Blood: 100
   MaxBlood: 100
-  moveSpeed: 1.58
+  moveSpeed: 3.58

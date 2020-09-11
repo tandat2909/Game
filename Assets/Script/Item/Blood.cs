@@ -11,8 +11,8 @@ public class Blood: Items
         {
             IHealth health = GameObject.FindWithTag("Player").GetComponent<IHealth>();
             health.AddHealth(base.ThongSo);
-            
 
+            UsingSound();
             
         }
         return TurnOffItem();
