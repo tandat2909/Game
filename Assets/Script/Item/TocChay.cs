@@ -17,7 +17,7 @@ public class TocChay : Items
             UsingSound();
             movement = GameObject.FindWithTag("Player").GetComponent<IIncreaseShoe>();
             movement.Add(ThongSo);
-            //StatusItem = false;    
+            StatusItem = false;    
             StartCoroutine(setTimes());
             return true;
         }

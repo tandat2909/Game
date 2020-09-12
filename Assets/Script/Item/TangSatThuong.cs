@@ -18,7 +18,7 @@ public class TangSatThuong : Items
             UsingSound();
             arrow = GameObject.FindWithTag("Player").GetComponent<IIncreaseDangger>();//.arrow.GetComponent<Arrow>();
             arrow.Add(ThongSo);
-            //StatusItem = false;
+            StatusItem = false;
             StartCoroutine(setTimes());
             return true;
 

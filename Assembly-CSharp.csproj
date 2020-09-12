@@ -71,6 +71,7 @@
      <Compile Include="Assets\Script\Fade\FadeSprite.cs" />
      <Compile Include="Assets\Script\Player\Player.cs" />
      <Compile Include="Assets\Script\Canvas\Button_OK.cs" />
+     <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\Script\Item\ManagerItem.cs" />
      <Compile Include="Assets\Data\ReadWrite.cs" />
      <Compile Include="Assets\Script\Item\TocChay.cs" />
@@ -83,6 +84,7 @@
      <Compile Include="Assets\Data\testxml.cs" />
      <Compile Include="Assets\Script\Menu\MainMenu.cs" />
      <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Script\Sound\Sound.cs" />
      <Compile Include="Assets\Script\Player\Bow\ArrowUlti.cs" />
      <Compile Include="Assets\DeathMenu.cs" />
      <Compile Include="Assets\Script\Enemy\RotationGun.cs" />
@@ -93,8 +95,7 @@
      <Compile Include="Assets\Script\Item\Blood.cs" />
      <Compile Include="Assets\Script\Main\main.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
-     <Compile Include="Assets\AudioManager.cs" />
-     <Compile Include="Assets\Script\Sound\Sound.cs" />
+     <Compile Include="Assets\OptionMenuSetting.cs" />
      <None Include="Assets\Data\ListPoint.xml" />
      <None Include="Assets\Data\ConfigDefault.xml" />
  <Reference Include="Unity.Timeline.Editor">

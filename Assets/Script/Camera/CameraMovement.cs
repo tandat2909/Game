@@ -13,6 +13,7 @@ public class CameraMovement : MonoBehaviour
     void Start()
     {
         this.transform.position = new Vector3(0, 0, -5f);
+        FindObjectOfType<AudioManager>().PlaySound("ThemeMain");
     }
     void LateUpdate()
     {

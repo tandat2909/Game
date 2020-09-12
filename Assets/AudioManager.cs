@@ -21,11 +21,6 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    void Start()
-    {
-        PlaySound("ThemeMain");
-    }
-
     // Update is called once per frame
     public void PlaySound(string name) {
         Sound s = Array.Find(sounds, sound => sound.name == name);
