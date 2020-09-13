@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1431321910960106742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431321910960106740}
+  - component: {fileID: 1431321910960106741}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431321910960106740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431321910960106742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431321910960106741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431321910960106742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aa2a866a0aa6947a8d396dc645f686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerShotting
+    Clip: {fileID: 8300000, guid: 32c3bf70c633a9745bd4d7c4a146d62b, type: 3}
+    volume: 0.264
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ThemeMain
+    Clip: {fileID: 8300000, guid: a200a860f17f04c4296df09a48d634e6, type: 3}
+    volume: 0.078
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Hitting
+    Clip: {fileID: 8300000, guid: 9901dcdf3e19b124e9d4231a4567978d, type: 3}
+    volume: 0.181
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ColectItems
+    Clip: {fileID: 8300000, guid: 78b8098bdefb84f45af22dc355f66f0b, type: 3}
+    volume: 0.215
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: UsingItems
+    Clip: {fileID: 8300000, guid: 3e5de033b73a7cc44833ced7a611df5e, type: 3}
+    volume: 0.215
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Item4
+    Clip: {fileID: 8300000, guid: aab4d150c4b31a140a018d20cb9b32a5, type: 3}
+    volume: 0.394
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShottingItem4
+    Clip: {fileID: 8300000, guid: 8036188025613a64ca3beb46bd528bbc, type: 3}
+    volume: 0.215
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
