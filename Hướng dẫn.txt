@@ -1,0 +1,30 @@
+	ANH HÙNG XẠ ĐIÊU
+
+	HƯỚNG DẪN CÁCH CHƠI
+
+Ấn play, đặt tên nhân vật
+
+Di chuyển nhân vật: 
+	Đi lên: W, nút lên;
+	Đi xuống: S, nút xuống;
+	Qua trái: A, nút trái;
+	Qua phải: D, nút phải;
+
+
+Nhân vật bắn tên: Theo hướng trỏ chuột, bắn: chuột trái;
+
+Mỗi lần giết được 1 quái + 10đ + có khả năng rơi ra vật phẩm;
+
+Vật phẩm: 1.Máu  2.Giày  3.Dao găm
+	Nhân Vật tới gần để lượm, không thể lượm vật phẩm đã lượm (và chưa sử dụng)
+		sau khi sử dụng vật phẩm đó mới có thể lượm tiếp
+	1.Máu : +50 máu đã mất (Sau khi lượm, ấn nút 1 để kích hoạt)
+	2.Giày: +Tốc độ di chuyển (Sau khi lượm, ấn nút 2 để kích hoạt) và có 5s để sử dụng
+	3.Dao Găm: +Sát thương đòn đánh (Sau khi lượm, ấn nút 3 để kích hoạt) và có 5s để sử dụng
+
+	4. Mũi tên xuyên phá: Sau khi lượm đủ 3 vật phẩm trên (Không kích hoạt)
+		Mũi tên xuyên phá sẽ tự động xuất hiện. Ấn nút 4 để kích hoạt.
+		Sau khi đã kích hoạt đòn đánh sẽ tăng sát thương và xuyên qua 
+		tất cả quái. Khi kích hoạt 3 vật phẩm dùng để kích hoạt cũng sẽ mất.
+
+Người chơi sống xót với số điểm cao nhất sẽ được lưu vào điểm cao.
