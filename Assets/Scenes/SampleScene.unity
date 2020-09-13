@@ -14157,7 +14157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: f667fbce1b409e549b418f9e763b599c, type: 2}
-  managerScore: {fileID: 0}
+  managerScore: {fileID: 11400000, guid: f97ca55bc08243344a6f6cbf8564d56b, type: 2}
   status: 1
   managerItem: {fileID: 1934908323}
 --- !u!114 &1697000535

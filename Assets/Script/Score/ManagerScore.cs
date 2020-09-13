@@ -9,15 +9,17 @@ public class ManagerScore: ScriptableObject
 {
    
    public List<Score> ListScore;
-   public void AddScore(Score a)
+   public bool AddScore(Score a)
     {
-        if(a!= null & a.Name != null && a.Values >=0)
+        if (a != null & a.Name != null && a.Values >= 0)
         {
             ListScore.Add(a);
             ListScore.Sort();
-            ReadWrite.addScore(a);
+            Debug.Log("count managerListscore: " + ListScore.Count);
+            return ReadWrite.addScore(a);
 
         }
+        else return false;
     }
    
 }

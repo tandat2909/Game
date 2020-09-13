@@ -16,13 +16,22 @@ public class Player : MonoBehaviour,IIncreaseDangger
     {
         try
         {
-            if (config.Blood <=0)
+            if (config.Blood <= 0)
             {
+
+
+                managerScore.AddScore(new Score(config.NamePlayer, config.Point));
                 Debug.Log("DIe");
                 status = false;
                 
+                GameObject[] destryenemy = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach(GameObject i in destryenemy)
+                {
+                    Destroy(i);
+                }
                 Time.timeScale = 0;
-                
+
+
             }
         }
         catch(Exception e) {

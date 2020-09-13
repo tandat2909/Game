@@ -70,6 +70,7 @@
     <Compile Include="Assets\Script\Item\ultiMate.cs" />
     <Compile Include="Assets\Script\Sound\OptionMenuSetting.cs" />
     <Compile Include="Assets\Script\Player\Bow\Bow.cs" />
+    <Compile Include="Assets\Script\Canvas\Text_HightScore.cs" />
     <Compile Include="Assets\Script\HotKey\HotKeys.cs" />
     <Compile Include="Assets\Script\Fade\FadeSprite.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
@@ -92,16 +93,15 @@
     <Compile Include="Assets\Script\Enemy\RotationGun.cs" />
     <Compile Include="Assets\Script\Canvas\Slider_Hearlt.cs" />
     <Compile Include="Assets\Data\ApplyConfig.cs" />
+    <Compile Include="Assets\Script\InterFace\IScore.cs" />
     <Compile Include="Assets\Script\Player\PlayerHeart.cs" />
     <Compile Include="Assets\Data\Score.cs" />
     <Compile Include="Assets\Script\Canvas\Text_Point.cs" />
     <Compile Include="Assets\Script\Canvas\Input_NamePlayer.cs" />
     <Compile Include="Assets\Script\Item\Blood.cs" />
     <Compile Include="Assets\Script\Main\main.cs" />
-    <Compile Include="Assets\PauseMenu.cs" />
-    <Compile Include="Assets\Script\Canvas\Text_HightScore.cs" />
-    <Compile Include="Assets\Script\InterFace\IScore.cs" />
     <Compile Include="Assets\Script\Score\ManagerScore.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <None Include="Assets\Data\ListScore.xml" />
     <None Include="Assets\Data\ConfigDefault.xml" />
     <Reference Include="Unity.Timeline.Editor">

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1186a216fb9c4048a35a2d46dca1d09, type: 3}
   m_Name: Config Player
   m_EditorClassIdentifier: 
-  NamPlayer: 
+  NamePlayer: tandat
   Damage: 20
-  Point: 0
-  Blood: 100
+  Point: 2000
+  Blood: 0
   MaxBlood: 100
   moveSpeed: 1.35

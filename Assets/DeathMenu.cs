@@ -17,6 +17,7 @@ public class DeathMenu : MonoBehaviour
         if (!GameObject.Find("Player").GetComponent<Player>().status)
         {
             death();
+           
             ShowHight();
         }
     }
@@ -30,6 +31,7 @@ public class DeathMenu : MonoBehaviour
        
         GameObject[] listScore = GameObject.FindGameObjectsWithTag("ScoreHight");
         managerScore.ListScore.Sort();
+        Debug.Log("count showhight: " + managerScore.ListScore.Count);
         for(int i = 0; i < listScore.Length; i++)
         {
             if(listScore[i].name.IndexOf(i+1 +"") != -1)

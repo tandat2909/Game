@@ -12,7 +12,7 @@ public class Button_OK:MonoBehaviour
     }
     public void _Click()
     {
-        config.NamPlayer = inputNamePlayer.text;
+        config.NamePlayer = inputNamePlayer.text;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
 
