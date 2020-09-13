@@ -11,6 +11,8 @@ TagManager:
   - Item
   - Ulti
   - BoxItem
+  - NameHight
+  - ScoreHight
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class DeathMenu : MonoBehaviour
     public static bool GameIsEnd = false;
     public GameObject deathMenuUI;
     public GameObject deathMenuBackGr;
+    public ManagerScore managerScore;
 
 
     // Update is called once per frame
@@ -16,11 +17,28 @@ public class DeathMenu : MonoBehaviour
         if (!GameObject.Find("Player").GetComponent<Player>().status)
         {
             death();
+            ShowHight();
         }
     }
     private void death() {
         deathMenuUI.SetActive(true);
         deathMenuBackGr.SetActive(true);
+    }
+
+    void ShowHight()
+    {
+       
+        GameObject[] listScore = GameObject.FindGameObjectsWithTag("ScoreHight");
+        managerScore.ListScore.Sort();
+        for(int i = 0; i < listScore.Length; i++)
+        {
+            if(listScore[i].name.IndexOf(i+1 +"") != -1)
+            {
+                listScore[i].GetComponent<IScore>().ShowScore(managerScore.ListScore[i]);
+                
+            }
+            
+        }
     }
 
 }

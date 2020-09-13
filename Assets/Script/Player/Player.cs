@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Data;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour,IIncreaseDangger
 {
     public ConfigPlayer config;
+    public ManagerScore managerScore;
     public bool status = true;
     public ManagerItem managerItem;
     
@@ -14,11 +16,13 @@ public class Player : MonoBehaviour,IIncreaseDangger
     {
         try
         {
-            if (config.Blood <0)
+            if (config.Blood <=0)
             {
                 Debug.Log("DIe");
                 status = false;
+                
                 Time.timeScale = 0;
+                
             }
         }
         catch(Exception e) {
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
         {
             Items itemtemp = item.gameObject.GetComponent<Items>();
             //Debug.Log(itemtemp.StatusItem +" ten id " + itemtemp.ID.ToString());
-            if (!managerItem.SearchItem(itemtemp.ID).StatusItem)
+            if (!managerItem.SearchItem(itemtemp.ID).StatusItem && !   GameObject.Find("Item" + itemtemp.ID).GetComponent<Image>().enabled)
             {
 
                 ActivateItem(itemtemp);
@@ -50,7 +54,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
         {
             item.StatusItem = true;
             managerItem.ListItem[managerItem.IndexOf(item.ID)] = item;
-            GameObject.Find("Item"+item.ID.ToString()).GetComponent<Image>().enabled = true;
+            GameObject.Find("Item"+item.ID).GetComponent<Image>().enabled = true;
 
             
         }catch(Exception e)

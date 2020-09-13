@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour,IIncreaseShoe
 {
     // Start is called before the first frame update
-
+      
     public ConfigPlayer config;
     public Rigidbody2D rb;
     public Animator animator;

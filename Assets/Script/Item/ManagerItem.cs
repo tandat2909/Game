@@ -93,7 +93,7 @@ public class ManagerItem : MonoBehaviour
         try
         {
             Bow a = GameObject.Find("Player").GetComponentInChildren<Bow>();
-            if (!SearchItem(IdItem.Ultimate).StatusItem)
+            if (!a.UltiActive)
             {
                 Items ulti = SearchItem(IdItem.Ultimate);
                 if (SearchItem(IdItem.Heart).StatusItem && SearchItem(IdItem.Shoe).StatusItem && SearchItem(IdItem.Dangger).StatusItem)

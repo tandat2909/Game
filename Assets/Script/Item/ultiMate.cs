@@ -16,6 +16,7 @@ public class ultiMate : Items
             Bow setUlti = GameObject.Find("Player").GetComponentInChildren<Bow>();
             setUlti.countUlti = setUlti.amoutUlti;
             setUlti.UltiActive = true;
+            StatusItem = false;
             return true;
         }
         return false;

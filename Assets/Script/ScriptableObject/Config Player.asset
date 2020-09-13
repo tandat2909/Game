@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1186a216fb9c4048a35a2d46dca1d09, type: 3}
   m_Name: Config Player
   m_EditorClassIdentifier: 
-  NamPlayer: aasda
-  Damage: 111.380005
-  Point: 9700
-  Blood: 1000
+  NamPlayer: 
+  Damage: 20
+  Point: 0
+  Blood: 100
   MaxBlood: 100
-  moveSpeed: 3.58
+  moveSpeed: 1.35
