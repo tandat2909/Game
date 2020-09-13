@@ -6,20 +6,17 @@ using UnityEngine;
 public class main : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject enemy;
+    public GameObject enemy = null;
     public int amountCreate;
-    //public float TimeCreatEnemy;
-    public List<Vector3> listCong;
+    
+    public List<GameObject> lsGate;
     
     public bool isCreateEnemy = false;
     
     void Start()
     {
-        listCong = new List<Vector3>()
-        {
-            new Vector3(-0.7f ,3.257f,enemy.transform.position.z),
-            new Vector3(5.833f,3.261f,enemy.transform.position.z)
-        };
+       
+      
       StartCoroutine(CreatEnemy());
         
     }
@@ -40,9 +37,13 @@ public class main : MonoBehaviour
             //Debug.Log(amountCreate);
             for (int i = 1; i <= amountCreate; i++)
             {
+                GameObject Gate = lsGate[Random.Range(0, lsGate.Count)];
+                Gate.SetActive(true);
                 GameObject a = Instantiate(enemy);
-                a.transform.position = listCong[Random.Range(0, listCong.Count)];
+                a.transform.position = Gate.transform.position;
                 yield return new WaitForSeconds(0.5f);
+                Gate.SetActive(false);
+                
             }
             //yield return new WaitForSeconds(TimeCreatEnemy);
 

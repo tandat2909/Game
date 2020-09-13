@@ -13,6 +13,7 @@ public class HotKeys : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
+                    
                     managerItem.SearchItem(IdItem.Heart).UseItem();
 
 

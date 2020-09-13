@@ -34,7 +34,11 @@ namespace Assets.Data
         }
         public override string ToString()
         {
-            return "Name: " + Name + "\tScore: " + Values; 
+            return Name + "\t" + values;
+        }
+        public string ToString(int a)
+        {
+            return "Name: " + Name + "\tScore: " + Values;
         }
     }
 }
