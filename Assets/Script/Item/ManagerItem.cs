@@ -65,13 +65,13 @@ public class ManagerItem : MonoBehaviour
             float rand = Random.Range(1, randMax);
 
             //Debug.Log("rand: " + rand + "count lisitem:" + ListItem.Count);
-            Debug.Log(i.NameItem + " rand " + rand);
+            
             sumWeight = i.weight;
             if (rand < sumWeight)
             {
                 if (i.NameItem != "")
                 {
-                    Debug.Log(i.NameItem +" rand " + rand);
+                    
                     foreach (GameObject objItem in lsGOItem)
                     {
                         if (objItem.GetComponent<Items>().ID == i.ID) return objItem;
@@ -100,7 +100,7 @@ public class ManagerItem : MonoBehaviour
                 {                    
                     GameObject.Find(ulti.NameItem).GetComponent<Image>().enabled = true;
                     ulti.StatusItem = true;
-                    FindObjectOfType<AudioManager>().PlaySound("Item4");
+                 
                     
                 }
                 else

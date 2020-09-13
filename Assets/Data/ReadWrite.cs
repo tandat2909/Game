@@ -2,12 +2,10 @@
 using System;
 using System.Collections.Generic;
 
-using System.Diagnostics;
-
 using System.Linq;
 
 using System.Xml.Linq;
-using UnityEditor.Experimental.GraphView;
+
 
 namespace Assets.Data
 {
@@ -53,8 +51,16 @@ namespace Assets.Data
             try
             {
                 List<Score> lsScore = new List<Score>();
-                var booksFromFile = XDocument.Load(path);
-
+                XDocument booksFromFile =null;
+                try
+                {
+                    booksFromFile = XDocument.Load(path);
+                }
+                catch
+                {
+                    CreatFileScore(path);
+                    booksFromFile = XDocument.Load(path);
+                }
                 IEnumerable<XElement> select = from item in booksFromFile.Descendants(table).Elements("Point") select item;
                 foreach (XElement i in select)
                 {
@@ -66,7 +72,7 @@ namespace Assets.Data
             }
             catch (System.Xml.XmlException e)
             {
-                string err = "Error LoadScore: " + e.Message;
+                string err = "Error ReadWrite.LoadScore: " + e.Message;
                 UnityEngine.Debug.Log(err);
                 //Console.WriteLine(err);
                 return null;
@@ -139,7 +145,7 @@ namespace Assets.Data
                 }
                 catch (Exception e)
                 {
-                    //Debug.Log("Error addScore: " + e.Message);
+                    UnityEngine.Debug.Log("Error ReadWrite.addScore: " + e.Message);
                     Console.WriteLine("Error addScore: " + e.Message);
                     return false;
                 }

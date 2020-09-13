@@ -32,7 +32,7 @@ public class main : MonoBehaviour
     }
     IEnumerator CreatEnemy()
     {
-        if (isCreateEnemy)
+        if (isCreateEnemy && GameObject.Find("Player").GetComponent<Player>().status)
         {
            // int pos = Random.Range(0, listCong.Count);
             //Debug.Log(pos);

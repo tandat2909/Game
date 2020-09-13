@@ -15,7 +15,7 @@ public class ManagerScore: ScriptableObject
         {
             ListScore.Add(a);
             ListScore.Sort();
-            Debug.Log("count managerListscore: " + ListScore.Count);
+           
             return ReadWrite.addScore(a);
 
         }

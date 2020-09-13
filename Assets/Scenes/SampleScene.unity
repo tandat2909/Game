@@ -15887,12 +15887,12 @@ PrefabInstance:
     - target: {fileID: 5673768415571185636, guid: 0206811107da8554b82f1623b42e1d8a,
         type: 3}
       propertyPath: m_MaxValue
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5673768415571185636, guid: 0206811107da8554b82f1623b42e1d8a,
         type: 3}
       propertyPath: m_Value
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673768415571185637, guid: 0206811107da8554b82f1623b42e1d8a,
         type: 3}

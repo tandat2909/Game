@@ -8,43 +8,44 @@ public class HotKeys : MonoBehaviour
 
     void Update()
     {
-        try
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (GameObject.Find("Player").GetComponent<Player>().status)
+            try
             {
-                managerItem.SearchItem(IdItem.Heart).UseItem();
-              
-                
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                managerItem.SearchItem(IdItem.Shoe).UseItem();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                managerItem.SearchItem(IdItem.Dangger).UseItem();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                if (managerItem.SearchItem(IdItem.Ultimate).UseItem())
+                if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    managerItem.ListItem.ForEach(i =>
+                    managerItem.SearchItem(IdItem.Heart).UseItem();
+
+
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    managerItem.SearchItem(IdItem.Shoe).UseItem();
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    managerItem.SearchItem(IdItem.Dangger).UseItem();
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    if (managerItem.SearchItem(IdItem.Ultimate).UseItem())
                     {
-                        if (i.ID != IdItem.Ultimate)
+                        managerItem.ListItem.ForEach(i =>
                         {
-                            i.TurnOffItem();
-                        }
-                    });
+                            if (i.ID != IdItem.Ultimate)
+                            {
+                                i.TurnOffItem();
+                            }
+                        });
+                    }
+
                 }
 
+            } catch (Exception e)
+            {
+                Debug.Log("HotKey Fail: " + e.ToString());
             }
 
-        }catch(Exception e)
-        {
-            Debug.Log("HotKey Fail: " + e.ToString());
-        }
-        
-    }
-
-
+    } 
 }
+
+

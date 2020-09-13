@@ -7,6 +7,7 @@ public class Sound
     public string name;
     
     public AudioClip Clip;
+    public AudioMixerGroup Out;
     [Range(0f,1f)]
     public float volume;
     [Range(.1f,3f)]

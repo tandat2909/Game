@@ -30,7 +30,7 @@ public class Player : MonoBehaviour,IIncreaseDangger
                     Destroy(i);
                 }
                 Time.timeScale = 0;
-
+                StopAllCoroutines();
 
             }
         }

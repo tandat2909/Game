@@ -1,43 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <ListScore ID="Scorce">
-  <Point ID="637356186956411718">
-    <NamePlayer>dat</NamePlayer>
-    <Value>150</Value>
-  </Point>
-  <Point ID="637356187983065497">
-    <NamePlayer>giang</NamePlayer>
-    <Value>0</Value>
-  </Point>
-  <Point ID="637356191231071453">
-    <NamePlayer>trong</NamePlayer>
-    <Value>440</Value>
-  </Point>
-  <Point ID="637356191231071453">
-    <NamePlayer>ti</NamePlayer>
-    <Value>4402</Value>
-  </Point>
-  <Point ID="637356291424341799">
-    <NamePlayer>testluudiem</NamePlayer>
-    <Value>539.78</Value>
-  </Point>
-  <Point ID="637356291789777286">
-    <NamePlayer>testluud</NamePlayer>
-    <Value>0</Value>
-  </Point>
-  <Point ID="637356293332005357">
-    <NamePlayer>testluud</NamePlayer>
-    <Value>0</Value>
-  </Point>
-  <Point ID="637356304352000519">
-    <NamePlayer>tandat</NamePlayer>
-    <Value>0</Value>
-  </Point>
-  <Point ID="637356304806925423">
+  <Point ID="637356323603483548">
     <NamePlayer>tandat</NamePlayer>
     <Value>20</Value>
   </Point>
-  <Point ID="637356307004585724">
+  <Point ID="637356325634082795">
     <NamePlayer>tandat</NamePlayer>
-    <Value>2000</Value>
+    <Value>40</Value>
+  </Point>
+  <Point ID="637356330453297310">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>0</Value>
+  </Point>
+  <Point ID="637356331344098926">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>60</Value>
+  </Point>
+  <Point ID="637356332549376681">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>60</Value>
+  </Point>
+  <Point ID="637356332653393255">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>0</Value>
+  </Point>
+  <Point ID="637356333107816403">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>100</Value>
+  </Point>
+  <Point ID="637356333912265177">
+    <NamePlayer>tinice</NamePlayer>
+    <Value>350</Value>
+  </Point>
+  <Point ID="637356344057772077">
+    <NamePlayer>tinice</NamePlayer>
+    <Value>870</Value>
+  </Point>
+  <Point ID="637356351041912807">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>0</Value>
+  </Point>
+  <Point ID="637356359511132337">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>0</Value>
+  </Point>
+  <Point ID="637356363233801245">
+    <NamePlayer>asdas</NamePlayer>
+    <Value>0</Value>
   </Point>
 </ListScore>

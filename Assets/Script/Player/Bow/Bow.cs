@@ -35,20 +35,23 @@ public class Bow : MonoBehaviour
     void Update() {
 
 
-    
-        txtCountUlti.text = UltiActive? countUlti.ToString() : "";
-               
-        mouesposs = Mousecam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0)) 
+        if (GameObject.Find("Player").GetComponent<Player>().status)
         {
-            if (UltiActive)
+            txtCountUlti.text = UltiActive ? countUlti.ToString() : "";
+
+            mouesposs = Mousecam.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetMouseButtonDown(0))
             {
-                CountUlti();
+                if (UltiActive)
+                {
+                    CountUlti();
+                }
+                Rotation();
+                Shoot();
+
             }
-            Rotation();
-            Shoot();
-          
         }
+        
     }
 
     void Rotation()

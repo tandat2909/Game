@@ -185,51 +185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[7].name
-      value: MenuTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[7].Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 38b09567667203145ba2d9c047fa2b18, type: 3}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[7].volume
-      value: 0.121
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[7].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[8].name
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[8].Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8376c7eba9201fb4995156e9e5958124, type: 3}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[8].volume
-      value: 0.343
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431321910960106741, guid: 54de736ffdc61e84798ac203ccff5243,
-        type: 3}
-      propertyPath: sounds.Array.data[8].pitch
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1431321910960106742, guid: 54de736ffdc61e84798ac203ccff5243,
         type: 3}
       propertyPath: m_Name
@@ -1677,6 +1632,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890155257282977760, guid: 768f403c3029f1c499702afb7c658b39,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890155257282977760, guid: 768f403c3029f1c499702afb7c658b39,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2890155257415098344, guid: 768f403c3029f1c499702afb7c658b39,
         type: 3}
