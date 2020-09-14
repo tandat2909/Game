@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ListScore ID="Scorce">
+  <Point ID="637357113326715944">
+    <NamePlayer>tandat</NamePlayer>
+    <Value>2000</Value>
+  </Point>
+  <Point ID="637357113502876235">
+    <NamePlayer>ok</NamePlayer>
+    <Value>20</Value>
+  </Point>
+  <Point ID="637357113606207336">
+    <NamePlayer>ok</NamePlayer>
+    <Value>0</Value>
+  </Point>
+  <Point ID="637357116567857367">
+    <NamePlayer>ok</NamePlayer>
+    <Value>40</Value>
+  </Point>
+  <Point ID="637357117761374906">
+    <NamePlayer>ok</NamePlayer>
+    <Value>40</Value>
+  </Point>
+</ListScore>
